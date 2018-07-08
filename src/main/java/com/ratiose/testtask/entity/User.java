@@ -1,18 +1,39 @@
 package com.ratiose.testtask.entity;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
-@Entity
+@Entity(name = "user")
 public class User {
 
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
+    @Column(unique = true)
+    private String email;
+    @Column
+    private String password;
+    @ElementCollection
+    private Set<String> favoriteActorsIds = new HashSet<>();
+    @ElementCollection
+    private Set<Integer> watchedMoviesIds = new HashSet<>();
 
-    @Column(unique=true)
-    String email;
+    public Set<String> getFavoriteActorsIds() {
+        return favoriteActorsIds;
+    }
 
-    String password;
+    public void setFavoriteActorsIds(Set<String> favoriteActorsIds) {
+        this.favoriteActorsIds = favoriteActorsIds;
+    }
+
+    public Set<Integer> getWatchedMoviesIds() {
+        return watchedMoviesIds;
+    }
+
+    public void setWatchedMoviesIds(Set<Integer> watchedMoviesIds) {
+        this.watchedMoviesIds = watchedMoviesIds;
+    }
 
     public Long getId() {
         return id;

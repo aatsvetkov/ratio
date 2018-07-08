@@ -8,5 +8,16 @@ For start app:
 ### Register user
 curl -X POST --data "email=test@test2.com&password=test" http://localhost:8080/user/register/ -v
 
+### Movie Search
+curl -X POST --data "year=2015&month=12" http://localhost:8080/movie/searchByFavoriteActorsUnwatchedMovies -v
+
+### Mark movie watched
+curl -X POST --data "" http://localhost:8080/movie/watched/{movieId} -v
+
+### Favorite Actor 
+curl -X POST --data "" http://localhost:8080/actor/favorite/{actorId} -v
+
+curl -X DELETE --data "" http://localhost:8080/actor/favorite/{actorId} -v
+
 ### View popular movies
 curl -X POST --data "email=test@test2.com&password=test" http://localhost:8080/movie/popular/ -v
