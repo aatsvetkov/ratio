@@ -8,6 +8,9 @@ For start app:
 ### Register user
 curl -X POST --data "email=test@test2.com&password=test" http://localhost:8080/user/register/ -v
 
+### Login
+curl -X POST --data "username=test@test2.com&password=test" http://localhost:8080/login -v
+
 ### Movie Search
 curl -X POST --data "year=2015&month=12" http://localhost:8080/movie/searchByFavoriteActorsUnwatchedMovies -v
 
