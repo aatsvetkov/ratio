@@ -12,7 +12,7 @@ curl -X POST --data "email=test@test2.com&password=test" http://localhost:8080/u
 curl -X POST --data "username=test@test2.com&password=test" http://localhost:8080/login -v
 
 ### Movie Search
-curl -X POST --data "year=2015&month=12" http://localhost:8080/movie/searchByFavoriteActorsUnwatchedMovies -v
+curl -X GET --data "year=2015&month=12" http://localhost:8080/movie/searchByFavoriteActorsUnwatchedMovies -v
 
 ### Mark movie watched
 curl -X POST --data "" http://localhost:8080/movie/watched/{movieId} -v
